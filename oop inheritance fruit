@@ -1,0 +1,38 @@
+class Fruit():
+    def __init__(self, colour= "unknown", size= "unknown", taste="unknown"):
+        self.colour = colour
+        self.size = size
+        self.taste = taste
+
+    def print_description(self):
+        print ("Colour = ", self.colour)
+        print ("Size = ", self.size)
+        print ("Taste = ", self.taste)
+
+class tropical(Fruit):
+    def __init__(self):
+        super().__init__(taste = "sweet")
+
+class citrus(Fruit):
+    def __init__(self, BitterLevel):
+        super().__init__(taste = "bitter")
+        self.BitterLevel = BitterLevel
+
+    def print_description(self):
+        print ("Colour = ", self.colour)
+        print ("Size = ", self.size)
+        print ("Taste = ", self.taste)
+        print ("Bitter Level = ", self.BitterLevel)
+
+
+mango = tropical()
+print("MANGO")
+mango.colour = "red"
+mango.size = "medium"
+mango.print_description()
+
+lemon = citrus(8)
+print("CITRUS")
+lemon.size = "small"
+lemon.colour = "yellow"
+lemon.print_description()

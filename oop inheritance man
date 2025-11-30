@@ -1,0 +1,41 @@
+class human():
+    def __init__(self, humangender="unknown", age=0):
+        self.humangender = humangender
+        self.age = age
+
+    def speak(self):
+        print ("Hi, I am a human and my gender is ", self.humangender)
+
+class man(human):
+    def __init__(self, beardlength):
+        super().__init__(humangender = "male")
+        self.beardlength = beardlength
+      
+
+    def speak(self):
+        print("Hi, I am a ", self.humangender)
+        
+
+class woman(human):
+    def __init__(self, hairlength):
+        super().__init__(humangender = "female")
+        self.hairlength = hairlength
+        
+
+    def speak(self):
+        print("Hi, I am a ", self.humangender)
+        
+
+A_man = man("long")
+A_man.age = 20
+print("A man is a ", A_man.humangender)
+print("Age -  ", A_man.age)
+print("Beard length - ", A_man.beardlength)
+
+
+A_woman = woman("long")
+A_woman.age = 20
+print("A woman is a ", A_woman.humangender)
+print("Age -  ", A_woman.age)
+print("Beard length - ", A_woman.hairlength)
+

@@ -1,0 +1,52 @@
+access = True
+
+class Account():
+    def __init__(self, number = 0, name = "N/A", balance = 0.0):
+        self.__number = number
+        self.__name = name
+        self.__balance = balance
+
+    def AllDetails(self):
+        print ("Account number = ", self.__number)
+        print ("Account name = ", self.__name)
+        print ("Account balance = ", self.__balance)
+
+    def BalanceShower(self):
+        print ("Current amount = ", self.__balance)
+
+    def Withdraw(self, amount):
+        if (amount < self.__balance):
+            self.__balance = self.__balance - amount
+            self.BalanceShower()
+        else:
+            print ("Not sufficient funds, withdrawal not successfull")
+
+    def Deposit(self, amount):
+        self.__balance = self.__balance + amount
+        self.BalanceShower()
+
+Account1 = Account(1, "Bob", 200.00)
+
+while (access == True):
+    print ("1 - Show all details\n2 - Show balance only\n3 - Withdraw an amount\n4 - Deposit an amount\n5 - Quit program")
+    menu = int(input("Enter an option"))
+    if (menu == 1):
+        Account1.AllDetails()
+    elif (menu == 2):
+        Account1.BalanceShower()
+    elif (menu == 3):
+        amount = int(input("Enter an amount to withdraw"))
+        Account1.Withdraw(amount)
+    elif (menu == 4):
+        amount = int(input("Enter an amount to deposit"))
+        Account1.Deposit(amount)
+    elif (menu == 5):
+        print ("Quitting program")
+        access = False
+    else:
+        print ("Error - incorrect input")
+
+
+
+
+
